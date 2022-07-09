@@ -49,6 +49,15 @@ let financiar2 = document.getElementById ("formulario");
 financiar.addEventListener ("submit",calcularRecargo);
 
 function calcularRecargo () {
-    alert("El producto se financia con un recargo de 10% en " + document.getElementById("cuotas").value + " cuotas de U$S" + Math.ceil(document.getElementById("costo").value*1.10/document.getElementById("cuotas").value));
+    if  (document.getElementById("costo").value === 250||225||85||1300||45||116||570 ) {
+        let financiacionesConsultadas = "El producto se financia con un recargo de 10% en " + document.getElementById("cuotas").value + " cuotas de U$S" + Math.ceil(document.getElementById("costo").value*1.10/document.getElementById("cuotas").value);   
+        localStorage.setItem("productosConsultados",financiacionesConsultadas)    
+    }else {
+        alert("Ingrese un valor valido")
+    }
+
 }
+
+
+
 
